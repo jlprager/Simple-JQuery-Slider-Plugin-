@@ -6,18 +6,16 @@ var mozBefore = "#slider::-moz-range-thumb:before";
 var mozAfter = "#slider::-moz-range-thumb:after";
 
 function injectStyles(rule, clear) {
-	if($("#sliderStyle").length === 0) {
-		$("body").append('<style id="sliderStyle">' + rule + '</style>')
-	} else {
-		if (clear) {
-			$("#sliderStyle").html(rule);
-		} else {
-			$("#sliderStyle").append(rule);
-		}
-	}
+    if($("#sliderStyle").length === 0) {
+        $("body").append('<style id="sliderStyle">' + rule + '</style>')
+    } else {
+        if (clear) {
+            $("#sliderStyle").html(rule);
+        } else {
+            $("#sliderStyle").append(rule);
+        }
+    }
 }
-
-
 
 $(window).load(function() {
     injectStyles(webkitAfter + " {content:'50'; top: 0;  -webkit-appearance: none; border: none; background: rgba(0, 0, 0, 0);}");
@@ -68,8 +66,5 @@ $.fn.buildSlider = function() {
 }
 
 $.fn.getValue = function() {
-	return $(this).find("#slider").val();
+    return $(this).find("#slider").val();
 }
-
-
-
